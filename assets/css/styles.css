@@ -1,0 +1,104 @@
+.image-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+  gap: 30px; /* Add spacing between images */
+}
+
+.image-row img {
+  width: 5vw; /* Responsive width based on viewport width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.scattered-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  margin: 20px 0;
+}
+
+.scattered-container img {
+  position: absolute;
+  width: 60px; /* Resize images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between items */
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  width: 300%;
+  margin: 20px 0;
+}
+
+/* Terminal Window Styles */
+.terminal-window {
+    width: 100%; /* Full width of the grid container */
+    height: 100%; /* Full height of the grid container */
+    background: #1a1a1a; /* Darker background for modern look */
+    border-radius: 8px;
+    border: 1px solid #00d4ff; /* Cyan border to match neon theme */
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* Cyan glow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto; /* Move terminal to the right */
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background: #2a2a2a;
+}
+
+.window-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.window-button.red { background: #ff5555; }
+.window-button.yellow { background: #ffaa00; }
+.window-button.green { background: #55ff55; }
+
+.terminal-body {
+    flex: 1; /* Fill remaining space */
+    padding: 1rem;
+    color: #e6e6e6; /* Light gray for default text */
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Syntax highlighting colors */
+.command { color: #00d4ff; } /* Cyan for commands */
+.keyword { color: #d787ff; } /* Purple for keywords */
+.string { color: #ffcb6b; } /* Yellow for strings */
+.number { color: #00ffab; } /* Green for numbers */
+.output { color: #e6e6e6; } /* Light gray for outputs */
+  
+.typing {
+    display: flex;
+    align-items: center;
+}
+  
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background: #00d4ff; /* Cyan cursor */
+    margin-left: 2px;
+    animation: blink 0.8s infinite;
+}
+  
+@keyframes blink {
+    50% { opacity: 0; }
+}
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
+        .active {
+            color: #00f7ff;
+            border-bottom: 2px solid #00f7ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky top-0 z-50 glassmorphism py-4 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold neon-text font-orbitron">Portfolio</a>
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href=index.html class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Home</a>
+                <a href="#projects" class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Projects</a>
+                <a href="#experience" class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Experience</a>
+                <a href="#contact" class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-gray-300 focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-50">
+        <div class="glassmorphism w-80 h-full absolute right-0 p-6 transform translate-x-full transition-transform duration-300">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-300 focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6 text-lg">
+                <a href=index.html class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Home</a>
+                <a href="#projects" class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Projects</a>
+                <a href="#experience" class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Experience</a>
+                <a href="#contact" class="text-gray-300 hover:text-[#00f7ff] transition-colors duration-300">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="home" class="py-32 text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-6xl font-extrabold neon-text font-orbitron mb-4">Let's Connect</h1>
+            <p class="text-xl text-gray-400 mb-8">Full Stack Developer | Crafting Futuristic Web Solutions</p>
+            <a href="#contact" class="inline-block bg-gradient-to-r from-[#00f7ff] to-[#7b00ff] text-white px-8 py-3 rounded-full hover-scale neon-border">Start Now</a>
+        </section>
+
+        <section id="projects" class="py-20" data-aos="fade-up">
+            <h2 class="text-5xl font-extrabold neon-text text-center mb-12 font-orbitron">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glassmorphism rounded-lg p-6 hover-scale neon-border" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <h3 class="text-2xl font-semibold text-white mb-2">E-commerce Platform</h3>
+                    <p class="text-gray-400 mb-4">A full-stack e-commerce website with user authentication, product catalog, shopping cart, and checkout functionality.</p>
+                    <ul class="flex flex-wrap gap-2 mb-4">
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">React</li>
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">Node.js</li>
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">PostgreSQL</li>
+                    </ul>
+                    <a href="#" class="text-[#00f7ff] hover:text-[#00f7ff]/80 transition-colors duration-300">View Project</a>
+                </div>
+                <div class="glassmorphism rounded-lg p-6 hover-scale neon-border" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Data Visualization Dashboard</h3>
+                    <p class="text-gray-400 mb-4">A dashboard that visualizes data from various sources using interactive charts and graphs.</p>
+                    <ul class="flex flex-wrap gap-2 mb-4">
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">Vue.js</li>
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">D3.js</li>
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">Express.js</li>
+                    </ul>
+                    <a href="#" class="text-[#00f7ff] hover:text-[#00f7ff]/80 transition-colors duration-300">View Project</a>
+                </div>
+                <div class="glassmorphism rounded-lg p-6 hover-scale neon-border" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Mobile Task Manager</h3>
+                    <p class="text-gray-400 mb-4">A mobile app for managing tasks and to-do lists, with features like reminders and collaboration.</p>
+                    <ul class="flex flex-wrap gap-2 mb-4">
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">React Native</li>
+                        <li class="bg-[#00f7ff]/20 text-[#00f7ff] px-3 py-1 rounded-full text-sm">Firebase</li>
+                    </ul>
+                    <a href="#" class="text-[#00f7ff] hover:text-[#00f7ff]/80 transition-colors duration-300">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20" data-aos="fade-up">
+            <h2 class="text-5xl font-extrabold neon-text text-center mb-12 font-orbitron">Experience</h2>
+            <div class="space-y-12">
+                <div class="glassmorphism rounded-lg p-6 hover-scale neon-border">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Software Engineer</h3>
+                    <p class="text-gray-400 mb-1">LaunchOff.fun - New York, NY</p>
+                    <p class="text-gray-500 mb-4">2024 - Present</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Developed and maintained web applications using React and Node.js.</li>
+                        <li>Collaborated with cross-functional teams to deliver high-quality software.</li>
+                        <li>Implemented RESTful APIs and integrated with various backend services.</li>
+                        <li>Optimized application performance and improved user experience.</li>
+                    </ul>
+                </div>
+                <div class="glassmorphism rounded-lg p-6 hover-scale neon-border">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Web Developer</h3>
+                    <p class="text-gray-400 mb-1">Launchoff.fun - New York, NY</p>
+                    <p class="text-gray-500 mb-4">2024 - Present</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Assisted in the development of websites using HTML, CSS, and JavaScript.</li>
+                        <li>Worked with databases such as MySQL and MongoDB.</li>
+                        <li>Participated in code reviews and learned best practices.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20" data-aos="fade-up">
+            <h2 class="text-5xl font-extrabold neon-text text-center mb-12 font-orbitron">Contact</h2>
+            <div class="glassmorphism rounded-lg p-10 max-w-2xl mx-auto">
+                <p class="text-lg text-gray-400 text-center mb-8">Let's build something amazing together!</p>
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 focus:outline-none focus:border-[#00f7ff] transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 focus:outline-none focus:border-[#00f7ff] transition-colors">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 focus:outline-none focus:border-[#00f7ff] transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-[#00f7ff] to-[#7b00ff] text-white px-6 py-3 rounded-full hover-scale neon-border">Send Message</button>
+                </form>
+                <div class="flex justify-center space-x-8 mt-8">
+                    <a href="mailto:your.email@example.com" class="text-[#00f7ff] hover:text-[#00f7ff]/80 transition-colors duration-300" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z"/><polyline points="22 6 12 13 2 6"/></svg>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-[#00f7ff] hover:text-[#00f7ff]/80 transition-colors duration-300" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.3-.87 2.23a4 4 0 0 1-1.13 1.27V22"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-[#00f7ff] hover:text-[#00f7ff]/80 transition-colors duration-300" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-6 text-center text-gray-400">
+        <p>© 2025 B TechLabs. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Menu Toggle
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+            const menuPanel = mobileMenu.querySelector("div");
+            menuPanel.classList.toggle("translate-x-full");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => link.addEventListener("click", toggleMobileMenu));
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Smooth Scroll and Active Link Highlighting
+        const navLinks = document.querySelectorAll('header nav a, #mobile-menu nav a');
+        const sections = document.querySelectorAll('section');
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
